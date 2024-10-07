@@ -9,6 +9,8 @@ extends RigidBody2D
 
 
 var f
+var r
+
 
 var can_fire = true;
 
