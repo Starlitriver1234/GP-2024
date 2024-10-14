@@ -12,9 +12,10 @@ func _process(delta: float) -> void:
 
 var s:float = 100
 var rs:float = 100
+var d:float = 10
 	
 	if Input.is_key_pressed(KEY_UP):
-		translate(Vector2(0, - s * delta))
+		translate(Vector2(0, -s * delta))
 	if Input.is_key_pressed(KEY_DOWN):
 		translate(Vector2(0, s * delta))
 	if Input.is_key_pressed(KEY_LEFT):
