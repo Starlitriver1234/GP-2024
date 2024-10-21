@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends CharacterBody2D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -8,11 +8,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
 
-var s:float = 100
-var rs:float = 100
-var d:float = 10
+	var s:float = 100
+	var rs:float = 100
+	var d:float = 10
 	
 	if Input.is_key_pressed(KEY_UP):
 		translate(Vector2(0, -s * delta))
