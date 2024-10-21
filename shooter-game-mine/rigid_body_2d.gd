@@ -37,16 +37,8 @@ var can_fire = true;
 
 func _physics_process(delta):
 	
-	var r = Input.get_axis("turn_left", "turn_right")
-	apply_torque(rot_power * r)
-	
-	f = Input.get_axis("move_backwards", "move_forwards")
-	
 	var force = power * -transform.y * f
 	# DebugDraw2D.set_text("Force", force)
-	if (force.length() > 0):
-		apply_central_force(force)
-		pass
 	# print("right: " + str(transform.x))
 	# print("up:" + str(transform.y))
 	
