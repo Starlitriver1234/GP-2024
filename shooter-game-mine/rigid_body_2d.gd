@@ -31,7 +31,7 @@ func _process(delta: float) -> void:
 @export var bullet_spawn:Node2D
 
 
-var f
+var f = 10
 
 var can_fire = true;
 
