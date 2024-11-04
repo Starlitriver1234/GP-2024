@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7eqjfdxdi4ok"]
+
+[ext_resource type="Texture2D" path="res://icon.svg" id="1_3enwv"]
+[ext_resource type="Script" path="res://rigid_body_2d.gd" id="1_chpt2"]
+[ext_resource type="PackedScene" path="res://bullet.tscn" id="2_hu5sp"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_chpt2")
+bullet_scene = ExtResource("2_hu5sp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(218, 83)
+texture = ExtResource("1_3enwv")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(360, 350)
+scale = Vector2(1.77344, 0.328125)
+texture = ExtResource("1_3enwv")
