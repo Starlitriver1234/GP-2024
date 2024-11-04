@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" path="res://icon.svg" id="1_3enwv"]
 [ext_resource type="Script" path="res://rigid_body_2d.gd" id="1_chpt2"]
-[ext_resource type="PackedScene" path="res://bullet.tscn" id="2_hu5sp"]
+[ext_resource type="PackedScene" uid="uid://lppt8d6ma55j" path="res://bullet.tscn" id="2_hu5sp"]
 
 [node name="Node2D" type="Node2D"]
 

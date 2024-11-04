@@ -38,14 +38,12 @@ var can_fire = true;
 func _physics_process(delta):
 	
 	var force = power * -transform.y * f
-	# DebugDraw2D.set_text("Force", force)
-	# print("right: " + str(transform.x))
-	# print("up:" + str(transform.y))
+	
 	
 	if Input.is_action_pressed("fire") and can_fire:
 		var b = bullet_scene.instantiate()
-		b.global_position = bullet_spawn.global_position
-		b.global_rotation = bullet_spawn.global_rotation
+		b.player_position = bullet_spawn.player_position
+		b.player_rotation = bullet_spawn.player_rotation
 		get_tree().get_root().add_child(b) 
 		can_fire = false
 		$Timer.start()
