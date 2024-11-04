@@ -45,7 +45,7 @@ func _physics_process(delta):
 		b.player_position = bullet_spawn.player_position
 		b.player_rotation = bullet_spawn.player_rotation
 		get_tree().get_root().add_child(b) 
-		can_fire = false
+		can_fire = true
 		$Timer.start()
 	
 	pass
