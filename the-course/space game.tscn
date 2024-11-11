@@ -25,4 +25,6 @@ script = ExtResource("3_h7r1o")
 player = NodePath("../Marker2D/player")
 speed = 100.0
 
+[node name="Area2D" type="Area2D" parent="."]
+
 [editable path="Marker2D/player"]
