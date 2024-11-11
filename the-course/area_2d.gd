@@ -42,12 +42,22 @@ func _process(delta: float) -> void:
 	DebugDraw2D.set_text("pos", rotation)
 	DebugDraw2D.set_text("glo_rotation", global_rotation)
 	
-	pass
+	
 	rotation -=0.1
 	position.x +=1
+	pass
 func_process(delta)
 	func_on_area_entered(area: Area2D) -> void:
 	print("Collided!")
+	if area.name == "wall":
+		print(area)
+	
+	func _ready() -> void:
+		var count = 10
+		
+	for i in range(count):
+		var w = wall_scene.instantiate()
+		var p = Vector2
 	
 	print (area)
 	
