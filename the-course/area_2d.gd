@@ -36,4 +36,23 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
+	DebugDraw2D.set_text("pos", position)
+	DebugDraw2D.set_text("pos", global_position)
+	DebugDraw2D.set_text("pos", rotation)
+	DebugDraw2D.set_text("glo_rotation", global_rotation)
+	
 	pass
+	rotation -=0.1
+	position.x +=1
+func_process(delta)
+	func_on_area_entered(area: Area2D) -> void:
+	print("Collided!")
+	
+	print (area)
+	
+	var explosion:GPUParticles3D = explosion_scene.instantia
+	explosion.global_position = area.global_p
+	explosion = true
+	get_parent().add_child(explosion)
+	area_queue_free()
