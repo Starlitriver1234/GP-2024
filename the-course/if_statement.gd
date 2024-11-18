@@ -8,7 +8,12 @@ func _draw() -> void:
 	r.size.x = r.size.x / 2
 	draw_rect(Rect2(r), Color.RED, true, 10, true)
 	var p = get_viewport().get_mouse_position()
-	if p.x < 
+	if p.x < 10:
+		print()
+	elif p < 20:
+		print()
+	else:
+		print()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
