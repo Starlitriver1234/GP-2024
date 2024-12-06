@@ -26,14 +26,14 @@ func _draw() -> void:
 		draw_rect(Rect2(hw, hh, hw, hh), Color.RED, true, 10, true)
 	
 
-	#    ==
-	# <
-	# >
-	# <=
-	# >=
-	# && and
-	# || or
-	# not
+		==
+	 <
+	 >
+	 <=
+	 >=
+	 && and
+	 || or
+	 not
 	
 	
 # Called when the node enters the scene tree for the first time.
