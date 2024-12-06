@@ -8,8 +8,6 @@ var c = 5
 
 func _draw() -> void:
 	
-	
-	
 	print("draw called: " + str(i))
 	var r = get_viewport_rect()
 	var hw = r.size.x / 2
