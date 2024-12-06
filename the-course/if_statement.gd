@@ -2,6 +2,9 @@ extends Node2D
 
 var i = 0
 var thera 
+var b = 10
+var c = 5
+
 
 func _draw() -> void:
 	
