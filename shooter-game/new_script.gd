@@ -31,3 +31,8 @@ func _process(delta: float) -> void:
 func _on_num_lines_value_changed(value: float) -> void:
 	count = value
 	pass # Replace with function body.
+
+
+func _on_radius_value_changed(value: float) -> void:
+	radius = value
+	pass # Replace with function body.

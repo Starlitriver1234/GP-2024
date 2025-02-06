@@ -4,3 +4,11 @@
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_wtcfe")
+
+[node name="num lines" type="HSlider" parent="."]
+offset_left = 221.0
+offset_top = 122.0
+offset_right = 920.0
+offset_bottom = 229.0
+
+[connection signal="value_changed" from="num lines" to="." method="_on_num_lines_value_changed"]
