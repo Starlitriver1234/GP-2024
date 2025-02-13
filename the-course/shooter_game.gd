@@ -3,6 +3,8 @@ extends Node2D
 # when the scene is loaded, assign these variables from the scene
 @onready var ufo_spawner = $ufo_spawner
 @onready var dude = $dude
+@onready var health = $health
+@onready var ammo_box = $ammo
 
 var target = 0
 var level = 0

@@ -103,6 +103,14 @@ func _physics_process(delta: float) -> void:
 		velocity = velocity + acceleration * delta	
 		var c = move_and_collide(velocity * delta)
 		
+		if c and c.get_collider().is_in_group("health"):
+			print("I collided")
+			lives += 1			
+		
+		if c and c.get_collider().is_in_group("ammo"):
+			print("I collided")
+			ammo += 1			
+		
 		# if i collide with ufo
 		if c and c.get_collider().is_in_group("ufo"):
 			print("I collided")
@@ -120,7 +128,7 @@ func _physics_process(delta: float) -> void:
 			# respawn the player
 			respawn()
 		else:
-			velocity = velocity * 1
+			velocity = velocity * 0.8
 		
 	
 func _ready() -> void:
