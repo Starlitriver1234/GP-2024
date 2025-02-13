@@ -47,6 +47,8 @@ func _process(delta):
 		self.queue_free()
 		
 
+
+
 func _on_timer_timeout():
 	self.queue_free()
 	pass # Replace with function body.

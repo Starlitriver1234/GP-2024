@@ -5,6 +5,7 @@ extends Node2D
 @onready var dude = $dude
 @onready var health = $health
 @onready var ammo_box = $ammo
+@onready var enemy = $enemy
 
 var target = 0
 var level = 0
