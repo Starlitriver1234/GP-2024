@@ -6,7 +6,7 @@ class_name Ufo
 # subclass of CharacterBody2D
 extends CharacterBody2D
 
-@export var radius = 20
+@export var radius = 30
 
 @export var color:Color = Color.WHITE
 @export var explosion:PackedScene
@@ -30,7 +30,6 @@ func _ready() -> void:
 		tween.tween_property(self, "position", position + Vector2.LEFT * 200, 2)
 		tween.tween_property(self, "position", position + Vector2.UP * 200, 2)
 		tween.tween_property(self, "position", position + Vector2.DOWN * 200, 2)
-		tween.finished.connect(movement)
 		# vary the pitch
 		$Synth.pitch_scale = randf_range(0.7, 1.3)
 		# wait 2 seconds
