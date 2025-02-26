@@ -30,6 +30,29 @@ func _ready() -> void:
 		tween.tween_property(self, "position", position + Vector2.LEFT * 200, 2)
 		tween.tween_property(self, "position", position + Vector2.UP * 200, 2)
 		tween.tween_property(self, "position", position + Vector2.DOWN * 200, 2)
+		
+func _ready():
+	tween = create_tween()
+	tween.set_loops(0)
+
+	for i in range(0, 360, 10):
+		var x = i
+		var y = sin(deg2rad(i)) * 50  # Sine wave amplitude
+		tween.tween_property(self, "position", Vector2(x, y + position.y), 0.1)
+		
+	func _ready():
+	tween = create_tween()
+	tween.set_loops(0)
+
+	# Move in a square pattern
+	tween.tween_property(self, "position", position + Vector2(200, 0), 1.0)
+	tween.tween_property(self, "rotation", rotation + PI / 2, 1.0)  # Rotate 90 degrees
+	tween.tween_property(self, "position", position + Vector2(0, 200), 1.0)
+	tween.tween_property(self, "rotation", rotation + PI / 2, 1.0)  # Rotate 90 degrees
+	tween.tween_property(self, "position", position + Vector2(-200, 0), 1.0)
+	tween.tween_property(self, "rotation", rotation + PI / 2, 1.0)  # Rotate 90 degrees
+	tween.tween_property(self, "position", position + Vector2(0, -200), 1.0)
+	tween.tween_property(self, "rotation", rotation + PI / 2, 1.0)  # Rotate 90 degrees
 		# vary the pitch
 		$Synth.pitch_scale = randf_range(0.7, 1.3)
 		# wait 2 seconds
@@ -82,3 +105,4 @@ func _on_timer_timeout() -> void:
 	# restart the timer for the next bullet
 	randomise_timer()
 	pass # Replace with function body.
+	
