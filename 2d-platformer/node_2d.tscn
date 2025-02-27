@@ -1,42 +1,95 @@
-[gd_scene load_steps=6 format=3 uid="uid://cw36ln7m0c5ky"]
+[gd_scene load_steps=7 format=3 uid="uid://cw36ln7m0c5ky"]
 
 [ext_resource type="Texture2D" uid="uid://bepsq5ik0rjef" path="res://icon.svg" id="1_wtcfe"]
-[ext_resource type="Script" uid="uid://c14p6mp4x5k6u" path="res://movement.gd" id="2_0e48y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
+size = Vector2(12.5842, 13.2634)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wtcfe"]
+size = Vector2(0.48911, 18.4918)
+
+[sub_resource type="GDScript" id="GDScript_wtcfe"]
+resource_name = "Movement 2"
+script/source = "extends CharacterBody2D
+
+
+const SPEED = 300.0
+const JUMP_VELOCITY = -400.0
+
+
+func _physics_process(delta: float) -> void:
+	# Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+
+	# Handle jump.
+	if Input.is_action_just_pressed(\"ui_accept\") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var direction := Input.get_axis(\"ui_left\", \"ui_right\")
+	if direction:
+		velocity.x = direction * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+
+	move_and_slide()
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
+size = Vector2(9.72326, 12.5345)
+
 [node name="Node2D" type="Node2D"]
+metadata/_edit_vertical_guides_ = [-4890.0]
 
 [node name="Platform" type="StaticBody2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Platform"]
-position = Vector2(468, 598)
-scale = Vector2(4.54688, 0.601562)
+position = Vector2(192, 598)
+scale = Vector2(2.71094, 0.601562)
 texture = ExtResource("1_wtcfe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+position = Vector2(141, 611)
+rotation = 3.14159
+scale = Vector2(36.1399, 7.74939)
 shape = SubResource("RectangleShape2D_0e48y")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Platform 2" type="StaticBody2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(941, 470)
+[node name="Sprite2D" type="Sprite2D" parent="Platform 2"]
+position = Vector2(591, 507)
 scale = Vector2(3.14063, 0.664062)
 texture = ExtResource("1_wtcfe")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform 2"]
+position = Vector2(601, 520)
+rotation = -3.14159
+scale = Vector2(884.699, -5.85543)
 shape = SubResource("RectangleShape2D_wtcfe")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-script = ExtResource("2_0e48y")
+script = SubResource("GDScript_wtcfe")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(405, 456)
+position = Vector2(106, 457)
 texture = ExtResource("1_wtcfe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("RectangleShape2D_epypp")
+
+[node name="Platform 3" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform 3"]
+position = Vector2(944, 405.25)
+scale = Vector2(2.32031, 0.636718)
+texture = ExtResource("1_wtcfe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform 3"]
+position = Vector2(954, 408)
+rotation = 3.14159
+scale = Vector2(32.5219, -7.10196)
+shape = SubResource("RectangleShape2D_0hol4")
