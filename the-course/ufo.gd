@@ -56,7 +56,7 @@ func drop_loot():
 	get_parent().add_child(loot)
 	pass
 
-func _draw() -> void:
+
 	
 	# Draw the ufo arc between pi and 2 pi
 	draw_arc(Vector2.ZERO, radius, PI, TAU, 6, color, line_size)
@@ -69,16 +69,8 @@ func _draw() -> void:
 		draw_circle(light_pos, radius * 0.1, color, false, line_size)
 	pass
 	 
-func _process(delta):
-	queue_redraw()
-	pass
-
-
-func _on_timer_timeout() -> void:
-	# drop a bullet
-	var b = bullet_scene.instantiate()
-	b.global_position = bullet_spawn.global_position
-	# rotate it downwards
+exportr
+f
 	b.global_rotation = PI
 	get_parent().add_child(b) 
 	b.color = color
