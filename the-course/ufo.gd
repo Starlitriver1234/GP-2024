@@ -90,3 +90,19 @@ func _on_timer_timeout() -> void:
 	# restart the timer for the next bullet
 	randomise_timer()
 	pass # Replace with function body.
+	
+	_timer_timeout() -> void:
+	# drop a bullet
+	var b = bullet_scene.instantiate()
+	b.global_position = bullet_spawn.global_position
+	# rotate it downwards
+	b.global_rotation = PI
+	get_parent().add_child(b) 
+	b.color = color
+	b.line_size = line_size
+	# make sure it doesnt collide the the other ufo's
+	b.set_collision_mask_value(3, false)
+	b.set_collision_mask_value(1, true)
+	# restart the timer for the next bullet
+	randomise_timer()
+	pass # Replace with function body.
