@@ -2,7 +2,7 @@
 @tool
 # give it a class name
 class_name Ufo
-
+@export var a
 # subclass of CharacterBody2D
 extends CharacterBody2D
 
@@ -28,8 +28,7 @@ func movement():
 	tween.tween_property(self, "position", position + Vector2.UP * 200, 2)
 	tween.tween_property(self, "position", position + Vector2.DOWN * 200, 2)
 	tween.finished.connect(movement)
-		
-	pass
+		pass
 
 func _ready() -> void:
 	# Tween my scale using elastic	
