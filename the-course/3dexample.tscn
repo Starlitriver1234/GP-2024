@@ -20,6 +20,8 @@ thing_scene = ExtResource("1_5jsri")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(143.178, 0, 0, 0, 2.98073, 0, 0, 0, 507.004, 2.10481, 0.199153, 4.35844)
+gi_mode = 2
+gi_lightmap_texel_scale = 0.9955
 mesh = SubResource("BoxMesh_d5ecd")
 script = ExtResource("1_sqcmj")
 thing_scene = ExtResource("1_5jsri")
@@ -37,6 +39,6 @@ environment = SubResource("Environment_j4v0a")
 autostart = true
 
 [node name="Defeated" parent="." instance=ExtResource("3_va8bh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.867727, 1.86314, 1.19546)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.867727, 1.67762, 0.550981)
 
 [connection signal="timeout" from="Timer" to="MeshInstance3D" method="_on_timer_timeout"]
