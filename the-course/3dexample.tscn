@@ -39,6 +39,6 @@ environment = SubResource("Environment_j4v0a")
 autostart = true
 
 [node name="Defeated" parent="." instance=ExtResource("3_va8bh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.867727, 1.67762, 0.550981)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.867727, 1.78756, 0.550981)
 
 [connection signal="timeout" from="Timer" to="MeshInstance3D" method="_on_timer_timeout"]
