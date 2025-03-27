@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cg687frv2xee7"]
+[gd_scene load_steps=6 format=3 uid="uid://cg687frv2xee7"]
 
 [ext_resource type="PackedScene" uid="uid://cr2f7gsnwby5" path="res://mesh_instance_3d.tscn" id="1_5jsri"]
-[ext_resource type="Script" path="res://cube_move.gd" id="1_sqcmj"]
+[ext_resource type="Script" uid="uid://b5sdwbj35w7m" path="res://cube_move.gd" id="1_sqcmj"]
+[ext_resource type="PackedScene" uid="uid://c84yu6md2qyjc" path="res://Defeated.fbx" id="3_va8bh"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_d5ecd"]
 
@@ -27,5 +28,8 @@ environment = SubResource("Environment_j4v0a")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="Defeated" parent="." instance=ExtResource("3_va8bh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.867727, -0.0905726, 1.19546)
 
 [connection signal="timeout" from="Timer" to="MeshInstance3D" method="_on_timer_timeout"]
